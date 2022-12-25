@@ -21,7 +21,7 @@ void PrintArray(double [,] arr)
     {
         for ( int j = 0; j < n; j++)
         {
-            Console.Write($"{arr[i, j]} ");
+            Console.Write(" " + Math.Round(array[i,j], 2));
         }
     Console.WriteLine();
     }
