@@ -11,13 +11,18 @@
 
 // [1,7] -> такого числа в массиве нет
 
-Console.Write("Введите индекс нужной строки: ");
+Console.Write("Введите индекс нужной строки от 0 до 5ти: ");
 int m = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите индекс нужного столбца: ");
+Console.Write("Введите индекс нужного столбца от 0 до 5ти: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
-int rowCount = new Random().Next(2, 5);
-int  columnCount =  new Random().Next(2, 5);
+while(m < 0 || n < 0)
+{
+    Console.WriteLine("Введенные индексы меньше нуля");
+}
+
+int rowCount = new Random().Next(3, 6);
+int  columnCount =  new Random().Next(3, 6);
 int[,] array = new int[rowCount, columnCount];
 
 void FillArray( int [,] arr)
@@ -48,7 +53,7 @@ void PrintArray( int[,] arr)
 
 FillArray(array);
 PrintArray(array);
-if (m > array.GetLength(0) && n > array.GetLength(1))
+if (m > array.GetLength(0) || n > array.GetLength(1))
 {
     Console.WriteLine("такого числа в массиве нет");
 }
